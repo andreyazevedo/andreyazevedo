@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavê Simples - Receita</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos gerais */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+        }
+
+        /* Grid layout */
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            color: #2d3748;
+        }
+
+        /* Lists */
+        .ingredient-list, .instruction-list {
+            list-style: none;
+        }
+
+        .ingredient-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .instruction-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #ebf5ff;
+            color: #3182ce;
+            border-radius: 50%;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* Section headers */
+        .section-title {
+            font-size: 1.25rem;
+            color: #4a5568;
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Tip box */
+        .tip-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffd700;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .tip-box h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .meta-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Pavê Simples</h1>
+            <div class="meta-info">
+                <div class="meta-item">
+                    <i data-lucide="clock"></i>
+                    <span>Preparo: 30 min</span>
+                </div>
+                <div class="meta-item">
+                    <i data-lucide="users"></i>
+                    <span>Serve 8 pessoas</span>
+                </div>
+                <div class="meta-item">
+                    <i data-lucide="heart"></i>
+                    <span>Dificuldade: Fácil</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="recipe-grid">
+            <div class="card">
+                <div class="card-header">
+                    <i data-lucide="list"></i>
+                    <h2>Ingredientes</h2>
+                </div>
+                
+                <div>
+                    <h3 class="section-title">
+                        <i data-lucide="cake"></i>
+                        Base do Pavê
+                    </h3>
+                    <ul class="ingredient-list">
+                        <li><i data-lucide="check"></i>400ml de leite</li>
+                        <li><i data-lucide="check"></i>1 colher de sopa de amido</li>
+                        <li><i data-lucide="check"></i>1 caixa de leite condensado</li>
+                        <li><i data-lucide="check"></i>1 gema</li>
+                        <li><i data-lucide="check"></i>1 caixa de creme de leite</li>
+                        <li><i data-lucide="check"></i>1 colher de chá de essência de baunilha</li>
+                        <li><i data-lucide="check"></i>Biscoito maisena</li>
+                    </ul>
+
+                    <h3 class="section-title">
+                        <i data-lucide="coffee"></i>
+                        Ganache
+                    </h3>
+                    <ul class="ingredient-list">
+                        <li><i data-lucide="check"></i>200g de chocolate ao leite (ou meio amargo)</li>
+                        <li><i data-lucide="check"></i>1 caixa de creme de leite</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i data-lucide="chef-hat"></i>
+                    <h2>Modo de Preparo</h2>
+                </div>
+
+                <div>
+                    <h3 class="section-title">
+                        <i data-lucide="layers"></i>
+                        Base do Pavê
+                    </h3>
+                    <ol class="instruction-list">
+                        <li>
+                            <span class="step-number">1</span>
+                            <span>Misturar o leite, o amido, o leite condensado, a gema, o creme de leite e a essência de baunilha</span>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <span>Levar ao fogo até engrossar</span>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <span>Depois de esfriar, montar o pavê</span>
+                        </li>
+                        <li>
+                            <span class="step-number">4</span>
+                            <span>Deixar na geladeira por, no mínimo, 3 horas</span>
+                        </li>
+                    </ol>
+
+                    <h3 class="section-title">
+                        <i data-lucide="droplets"></i>
+                        Ganache
+                    </h3>
+                    <ol class="instruction-list">
+                        <li>
+                            <span class="step-number">1</span>
+                            <span>Derreter o chocolate no micro-ondas</span>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <span>Misturar com o creme de leite</span>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <span>Despejar no pavê</span>
+                        </li>
+                        <li>
+                            <span class="step-number">4</span>
+                            <span>Deixar esfriar</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h4>Dica do Chef</h4>
+            <p>Para um pavê ainda mais saboroso, você pode alternar camadas de biscoito com creme e finalizar com o ganache por cima. Decore com raspas de chocolate!</p>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
